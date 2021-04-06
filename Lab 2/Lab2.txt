@@ -1,0 +1,133 @@
+Identificar la ip ifconfig
+>192.168.240.128
+>255.255.255.0
+>192.168.240.25
+
+Cambio de ip provisional
+(sudo ifconfig 192.168.240.129 netmask 255.255.255.0)
+Y al reiniciar no se mantuvo la nueva ip
+
+Ip de manera estatica
+> Se utilizo vi
+> iface eth0 inet static
+  address <ip>/24
+  gateway <ip>
+> service networking restart
+
+Ver los puertos abiertos (netstat -lntu)
+
+Ip por dhcp (echo “iface eth0 inet dhcp” >>/etc/network/interfaces)
+ifconfig eth0 up
+
+Instalar ssh
+>sudo apt-get install ssh
+>sudo service ssh start
+
+Habilitar ssh remoto
+> sudo update-rc.d -f ssh remove
+
+agregar los defaults
+> sudo update-rc.d -f ssh defaults
+
+Cambiamos el puerto para mayor seguridad
+> nano /etc/ssh/sshd_config >10101
+
+Habilitamos PermitRootLogin
+> nano /etc/ssh/sshd_config
+> PermitRootLogin yes
+
+
+Uso de dig
+>apt-get install dnsutils
+
+>dig google.com any
+
+Los registros mas comunes son AAAA
+> A: Hace referencia a la direccion ipv4 de un servidor web.
+> AAAA: Referencia a la direccion ipv6 de un host.
+> CAA: Posibles autoridades de sertificacion CA para un dominio.
+> SOA : Hace referencia al comienzo de autoridad, es uno de los mas importantes ya que guarda informacion esenciual como la fecga de la ultima actualizacion del dominio.
+> TXT: Referencia a un texto, esto permite que los admin insertent texto en los registros dns.
+> MX: Lista de servidor de intercambio de correo que se utiliza para este dominio.
+> NS: A los servidores de nombres es el autorizado par el dominio.
+
+Conectarse mediante iwconfig
+> escaneamos las redes > iwlist wlan0 scan
+> conectamos a nuestra red que queremos > iwconfig wlan0 essid key
+
+
+Manejo de paquetes
+>apt-get update
+>apt-get install snort
+
+Desinstalar
+>sudo apt-get remove --purge snort
+
+Install sin el manejador de paquetes
+git clone https://github.com/robertdavidgraham/masscan
+cd masscan
+make
+make install
+
+Manejo de permisos
+
+Crear un nuevo grupo de usuarios
+> addgroup estudiantes
+>adduser -g estudiantes MauricioCR
+
+Crear archivo en /tmp
+>cd /tmp
+> touch archivoTemp.txt
+
+Umask (user mask o máscara de usuario), es un comando para entornos POSIX que determina los permisos predeterminados que se establecen cuando creamos un archivo o directorio (carpeta).
+
+También hace referencia a la función que establece la máscara (mask), y a la máscara en sí; normalmente se conoce como la máscara de creación del modo de archivo.
+
+Process Management
+
+Procesos de mi maquina
+>ps
+>ps  aux > muestra todos los procesos del sistema
+>ps  axjf > arbol jerarquico con la ruta del programa.
+
+>msfconsole
+Filtrar proceso por msfconsole
+>ps aux | grep msfconsole
+PDI de 3898
+
+Cambio de prioridad de proceso
+>renice -n 10 -p 3898
+
+Esta consumiendo 2.3MB
+>kill 3898
+
+
+Los 5 asteriscos
+De izquierda a derecha, los asteriscos representan:
+Minutos: de 0 a 59.
+Horas: de 0 a 23.
+Día del mes: de 1 a 31.
+Mes: de 1 a 12.
+Día de la semana: de 0 a 6, siendo 0 el domingo.
+
+
+Creacion de script calendarizado.
+> touch script.sh
+> nano script.sh
+> #!/bin/bash
+
+# our comment is here
+
+echo "The current directory is:"
+
+pwd
+
+echo "The user logged in is:"
+
+whoami
+
+> damos persmisos
+> chmod +x ./script.sh
+>crontab -e
+>5 4 * * sun /home/mauricio/desktop/script.sh
+4:05 los domingos
