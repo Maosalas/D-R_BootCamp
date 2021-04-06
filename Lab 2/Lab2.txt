@@ -52,8 +52,9 @@ Los registros mas comunes son AAAA
 > NS: A los servidores de nombres es el autorizado par el dominio.
 
 Conectarse mediante iwconfig
-> escaneamos las redes > iwlist wlan0 scan
+> Escaneamos las redes > iwlist wlan0 scan
 > conectamos a nuestra red que queremos > iwconfig wlan0 essid key
+
 
 
 Manejo de paquetes
