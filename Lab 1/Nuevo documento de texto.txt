@@ -1,0 +1,6 @@
+Ver contenido sin editores de texto
+>cat
+>nl
+>head
+
+
