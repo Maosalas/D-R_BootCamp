@@ -216,6 +216,13 @@ $ adduser -g estudiantes MauricioCR
 $ cd /tmp
 $ touch archivoTemp.txt
 ```
+
+:heavy_check_mark: Dar privilegios a un grupo y usuario
+```
+$ touch temp.txt
+$ chmod 440 temp.txt
+$ chown MauricioCR:estudiantes temp.txt
+```
 ## Umask (user mask o máscara de usuario).
 
 Es un comando para entornos POSIX que determina los permisos predeterminados que se establecen cuando creamos un archivo o directorio (carpeta).
