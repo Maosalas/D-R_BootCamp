@@ -73,6 +73,7 @@ $ sudo nano /etc/enviroment
 $ MAS_VAR=SYSADMIT
 ```
 :heavy_check_mark: Cambiar el prompt del shell por "World Best Hacker"
+
 > Primero creamos un backup del archivo ~/.bashrc
 ``
 $ cp ~/.bashrc ~/.bashrc.bak
