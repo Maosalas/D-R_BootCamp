@@ -1,6 +1,7 @@
 # Variables de entorno
 
 :heavy_check_mark: Visualizar las variables de entorno
+
 ```
  $ printenv
  COLORFGBG=15;0
@@ -56,9 +57,14 @@ _=/usr/bin/printenv
 ```
 
 :heavy_check_mark: Filtrar por BASH_ALIASES
+
+```
 $ printenv | grep BASH_ALIASES
 
+```
+
 :heavy_check_mark: Incluir el path de masscan como variable de entorno
+
 ```
 $ MAS_VAR='/home/mauricio/Desktop/Masscan_D-R/masscan/bin/masscan'
 $ set | grep MAS_VAR
@@ -68,6 +74,7 @@ $ printenv | grep MAS_VAR
 $ MAS_VAR='/home/mauricio/Desktop/Masscan_D-R/masscan/bin/masscan'
 ```
 :heavy_check_mark: Incluir una variable de entorno permanente
+
 ```
 $ sudo nano /etc/enviroment
 $ MAS_VAR=SYSADMIT
