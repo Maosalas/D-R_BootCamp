@@ -194,3 +194,52 @@ $ df -h
 ```
 $ umount /media/usb 
 ```
+
+# Logging
+
+:heavy_check_mark: Que es rsyslog?
+
+Se encarga de implementar el protocolo de syslog básico, lo extiende con filtrado basado en un contenido dado, con capacidades de filtrado enriquecido, opciones de configuración flexibles y agrega características como uso de TCP para el transporte.
+
+:heavy_check_mark: Donde se encuentra el archivo de configuración de rsyslog?
+```
+$ /etc/rsyslog.conf
+```
+
+:heavy_check_mark: Que es logrotate?
+
+Esta utilidad en linux nos permite rotar, comprimir y renovar los ficheros de log de forma automatizada.
+
+:heavy_check_mark: Intenta hacer sudo con un usuario que no este en sudoers
+
+>No se puede
+
+:heavy_check_mark: Ingresa mal la contraseña de un user que este en sudoers
+
+>Indica que la contraseña está mal ingresada
+
+
+# Transferencia de archivos
+
+:heavy_check_mark: Crea un archivo en kali
+
+```
+$ touch toMTSP.txt
+```
+
+:heavy_check_mark: Transfiere el archivo mediante scp a Metasploitable
+
+```
+$ scp ./toMTSP.txt msfadmin@192.168.240.130:/home/msfadmin
+```
+:heavy_check_mark: Transfiere el archivo mediante FTP a Metasploitable
+
+```
+$ ftp 192.168.240.130
+$ msfadmin
+$ msfadmin
+$ put <nombreArchivo>
+```
+
+:heavy_check_mark: Transfiere el archivo mediante tFTP a Metasploitable
+>No hay puerto de escucha
