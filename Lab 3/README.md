@@ -262,3 +262,35 @@ $ put <nombreArchivo>
 
 :heavy_check_mark: Transfiere el archivo mediante tFTP a Metasploitable
 >No hay puerto de escucha
+
+
+# Windows
+
+Agregar dos usuarios con cmd y despues con powershell
+
+```
+net user user1 user1pass /add
+net user user2 user2pass /add
+
+```
+
+PowerShell
+
+```
+New-LocalUser -Name "UserShell1" -Description "Uso de powershell" -NoPassword
+New-LocalUser -Name "UserShell2" -Description "Uso de powershell" -NoPassword
+```
+
+CMD add to admin
+
+```
+net localgroup Administrators user1 /add
+```
+
+Powershell add to admin
+
+```
+Add-LocalGroupMember -Group 'Administrators' -Member user2 -Verbose
+
+```
+
