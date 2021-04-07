@@ -72,13 +72,17 @@ $ MAS_VAR='/home/mauricio/Desktop/Masscan_D-R/masscan/bin/masscan'
 $ sudo nano /etc/enviroment
 $ MAS_VAR=SYSADMIT
 ```
+
 :heavy_check_mark: Cambiar el prompt del shell por "World Best Hacker"
 
 > Primero creamos un backup del archivo ~/.bashrc
+
 ``
 $ cp ~/.bashrc ~/.bashrc.bak
 ```
+
 > Despues abrimos el archivo para modificarlo
+
 ```
 $ sudo nano ~/.bashrc
 $ PS1='World Best Hacker> '
@@ -89,6 +93,7 @@ $ PS1='World Best Hacker> '
 # Bash Sript
 
 :heavy_check_mark: Realiza un script que permita tomar los puertos a escanear
+
 ```
 $ touch puertos.txt
 $ nano puertos.txt
@@ -98,24 +103,30 @@ $ cat puertos.txt | sed -e "s/:/ /" | while read ip port
     done
 
 ```
+
 :heavy_check_mark: Scan a la direccion ip de Metasploitable y envia a una extension grep
+
 ```
 $ nmap -sS 192.168.240.130 -p- -oG output -T4
 ```
+
 > -oG salida grepeable, "Esta obsoleto"
 
 :heavy_check_mark: Fuera del script filtre al puerto 80
+
 ```
 $ cat output| grep 80/open > grepPort80.txt
 ```
 
 :heavy_check_mark: Fuera del script cuente los puertos abiertos
+
 ```
 $ awk '/^Host: / && /Ports: / { num=gsub("/open/", ""); print $2, "-", num }' < ./output
 
 ```
 
 :heavy_check_mark: Comprime el archivo de salida en formato .tar.gz
+
 ```
 $ tar -czvf grep.tar.gz ./
 
