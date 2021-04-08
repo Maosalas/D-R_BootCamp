@@ -356,6 +356,7 @@ out-file -filepath C:\Test1\process.txt -inputobject $a -encoding ASCII -width 5
 
 :heavy_check_mark: Cuantos anillos tiene?
 >Tiene 5 anillos
+
 |Capa|Tipo|
 |--|---|
 |1|Kernel|
