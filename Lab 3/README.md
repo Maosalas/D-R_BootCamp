@@ -365,6 +365,25 @@ out-file -filepath C:\Test1\process.txt -inputobject $a -encoding ASCII -width 5
 |4|Sistema de archivos|
 |5|Interfaz de usuario|
 
+:heavy_check_mark: Que es una API de windows
+
+> Es la interfaz de programacion de aplicaciones de Windows.
+
+:heavy_check_mark: Que es un dll
+
+> Son bibliotecas de Enlaces Dinámicos, consisten en una serie de archivos que constan de código ejecutable y demás partes de una app, los cuales hacen posible la utilización de las aplicaciones que tenemos instaladas en la PC.
+
+:heavy_check_mark: Que es el registro de windows
+
+> El Registro de Windows 10 es una base de datos que se sitúa en el disco duro, encargándose de guardar los ajustes de programas y del propio Windows, además de diversos drivers y también hardware del ordenador.
+
+Como funciona
+>La segunda es probablemente la más habitual y se hace desde la herramienta ejecutar del ordenador en Windows 10. Lo primero que hacemos es tocar simultáneamente las teclas de Windows y la tecla R para que en nuestro ordenador se abra la ventaja de Ejecutar que habrás visto alguna vez. Aquí tienes que escribir REGEDIT y pulsar Enter o tocar sobre el botón Aceptar. Automáticamente se abrirá el registro.
+
+:heavy_check_mark: Como se obtiene ayuda en powershell
+>get-help
+
+
 
 
 
