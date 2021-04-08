@@ -266,7 +266,7 @@ $ put <nombreArchivo>
 
 # Windows
 
-Agregar dos usuarios con cmd y despues con powershell
+:heavy_check_mark: Agregar dos usuarios con cmd y despues con powershell
 
 ```
 net user user1 user1pass /add
@@ -274,23 +274,96 @@ net user user2 user2pass /add
 
 ```
 
-PowerShell
+:heavy_check_mark: PowerShell
 
 ```
 New-LocalUser -Name "UserShell1" -Description "Uso de powershell" -NoPassword
 New-LocalUser -Name "UserShell2" -Description "Uso de powershell" -NoPassword
 ```
 
-CMD add to admin
+:heavy_check_mark: CMD add to admin
 
 ```
 net localgroup Administrators user1 /add
 ```
 
-Powershell add to admin
+:heavy_check_mark: Powershell add to admin
 
 ```
 Add-LocalGroupMember -Group 'Administrators' -Member user2 -Verbose
 
 ```
+
+# Comandos basicos
+
+:heavy_check_mark: Crear un directorio y dentro de ese un archivo
+
+> Hay 4 formas diferentes
+
+```
+new-item <path of directory suppose c:\dir1> -itemtype directory
+New-Item -Path '\\Shared\TestFolder\testfile1.txt' - ItemType File
+
+```
+
+```
+$fso = new-object -ComObject scripting.filesystemobject
+
+$fso.CreateFolder("path of directory suppose C:\test1")
+
+```
+```
+md <path of directory suppose c:\test5>
+```
+```
+[system.io.directory]::CreateDirectory("path of directory suppose c:\test5")
+```
+
+:heavy_check_mark: Copiar a un directorio
+```
+Copy-Item "C:\Wabash\Logfiles\mar1604.log.txt" -Destination "C:\Presentation\"
+```
+
+:heavy_check_mark: Mover a un directorio
+```
+Move-Item -Path C:\test.txt -Destination E:\Temp\tst.txt
+```
+:heavy_check_mark: Borrar el archivo y el directorio
+```
+Remove-Item –path c:\testfolder\ remove-item * -include *.mp3 –recurse
+
+```
+:heavy_check_mark: Agregar texto
+```
+Set-Content -Value "hello, world!" -Path .\MyArchivo.txt 
+
+```
+:heavy_check_mark: Append texto
+```
+Add-Content -Value "ciao, mondo!" -Path .\MyArchivo.txt 
+
+```
+:heavy_check_mark: Visualizar contenido
+```
+Get-Content -Path .\MyArchivo.txt 
+```
+:heavy_check_mark: Limitar la salida
+>si
+```
+out-file -filepath C:\Test1\process.txt -inputobject $a -encoding ASCII -width 50
+```
+# Windows FileSystem
+
+:heavy_check_mark: Cuantos anillos tiene?
+>Tiene 5 anillos
+|Capa|Tipo|
+|--|---|
+|1|Kernel|
+|2|Manejo de memoria|
+|3|E/S|
+|4|Sistema de archivos|
+|5|Interfaz de usuario|
+
+
+
 
